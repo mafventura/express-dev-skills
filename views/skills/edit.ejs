@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+    <div class="container-fluid p-4">
+        <form action="/skills//<%= skill.id %>?_method=PUT" method="POST">
+            <p>Language Name:</p>
+            <input type="text" name="name" value="<%= skill.name %>"><br>
+            <p>Status:</p>
+            <input type="text" name="level" value="<%= skill.status %>"><br>
+            <p>Confidence Level:</p>
+            <input type="text" name="level" value="<%= skill.level %>"><br>
+            <p>Comment:</p>
+            <input type="text" name="description" value="<%= skill.description %>"><br>
+            <button type="submit">Update</button>
+        </form>
+    </div> 
+
+<%- include('../partials/footer') %>

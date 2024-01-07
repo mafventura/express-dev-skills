@@ -3,37 +3,48 @@ const { name } = require("ejs")
 const skills = [
     {
         name: 'CSS',
-        learned: 'yes',
-        id: 0,
+        status: 'learned',
+        level: 'confident',
+        id: 380604,
+        description: 'Learned the general concepts of the language, and feel confident using it. Currently learning how to style pages with bootstrap'
 
     },
 
     {
         name: 'HTML',
-        learned: 'yes',
-        id: 1,
+        status: 'learned',
+        level: 'confident',
+        id: 390094,
+        description: 'Learned the general concepts of the language, and feel confident using it.'
 
     },
 
     {
         name: 'JavaScript',
-        learned: 'currently learning',
-        id: 2,
+        status: 'currently learning',
+        level: 'getting there',
+        id: 410542,
+        description: 'Learned the general concepts of the language, and am now learning different ways to apply it. Started by creating a game with DOM Elements, and I am now starting to use node, express and vue'
 
     },
 
     {
         name: 'Python',
-        learned: 'no',
-        id: 3,
-
+        status: 'not yet',
+        level: 'zero',
+        id: 424022,
+        description: ''
     }
 
 ]
 
 module.exports = {
     getOne,
-    getAll
+    getAll,
+    create,
+    update,
+    deleteOne
+    
 }
 
 function getOne(id) {
@@ -43,4 +54,21 @@ function getOne(id) {
 
 function getAll() {
     return skills
+}
+
+function create(skill) {
+    skill.id = Date.now() % 1000000
+    skills.push(skill)
+}
+
+function update(id, updatedSkill) {
+    id = parseInt(id)
+    const skill = skills.find(name => name.id === id)
+    Object.assign(skill, updatedSkill)
+}
+
+function deleteOne(id) {
+    id = parseInt(id)
+    const idx = skills.findIndex(name => name.id === id)
+    skills.splice(idx, 1)
 }

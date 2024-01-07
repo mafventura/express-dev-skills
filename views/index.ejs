@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Dev Skills</title>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <a href="/skills">Skills List</a>
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+  <div class="container-fluid p-4">
+    <p>Welcome to <%= title %>, my first Node.js + Express.js project</p>
+    <p>You can check <a href="/skills">here</a> a list of skills I've been learning!</p>
+  </div>
+    
+
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+    <div class="container-fluid p-4">
+        <form action="/skills" method="POST">
+            <p>Language Name:</p>
+            <input type="text" name="name""><br>
+            <p>Status:</p>
+            <input type="text" name="status""><br>
+            <p>Confidence Level:</p>
+            <input type="text" name="level""><br>
+            <p>Comment:</p>
+            <input type="text" name="description""><br>
+            <button type="submit">Create</button>
+        </form>
+    </div> 
+
+<%- include('../partials/footer') %>
